@@ -1,0 +1,15 @@
+{
+  "name": "junipeer/erpintegration",
+  "description": "Junipeer Erp Integration Module",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "require": {
+    "magento/module-checkout": "*"
+  },
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Junipeer\\ErpIntegration\\": ""
+    }
+  }
+}
