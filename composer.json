@@ -1,5 +1,5 @@
 {
-  "name": "junipeer/erpintegration",
+  "name": "junipeer/erp-integration-magento2",
   "description": "Junipeer Erp Integration Module",
   "type": "magento2-module",
   "version": "1.0.0",
