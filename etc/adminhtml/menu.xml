@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Junipeer::erpintegration" title="Erp Integration" module="Junipeer_ErpIntegration" sortOrder="10" parent="Junipeer::base" resource="Junipeer_ErpIntegration::base" />
+        <add id="Junipeer::erpintegration_config" title="Configuration" module="Junipeer_ErpIntegration" sortOrder="10" parent="Junipeer::erpintegration" action="adminhtml/system_config/edit/section/junipeer_erpintegration" resource="Junipeer_ErpIntegration::config" />
+    </menu>
+</config>
