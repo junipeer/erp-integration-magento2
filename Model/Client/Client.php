@@ -25,6 +25,8 @@ abstract class Client
     /** @var string $apiPassword */
     private $apiPassword;
 
+    protected $apiPath = "";
+
     /** @var \GuzzleHttp\Client $httpClient */
     private $httpClient;
 
@@ -59,6 +61,7 @@ abstract class Client
      * @return string
      */
     protected function buildEndpoint($endpoint, $params = []) {
+        $endpoint = rtrim($this->apiPath, "/") . "/". ltrim($endpoint, "/");
         $buildEndpoint = ltrim($endpoint, "/");
         if (!empty($params)) {
             $query =  http_build_query($params);
@@ -96,8 +99,8 @@ abstract class Client
             throw new \Exception("Please add api keys in configuration.");
         }
 
-        $apiUrl = $url . ltrim("/", $path);
-        $this->setGuzzleHttpClient($apiUrl);
+        $this->apiPath = $path;
+        $this->setGuzzleHttpClient($url);
     }
 
     /**
