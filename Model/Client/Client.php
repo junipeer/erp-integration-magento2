@@ -61,7 +61,6 @@ abstract class Client
      * @return string
      */
     protected function buildEndpoint($endpoint, $params = []) {
-        $endpoint = rtrim($this->apiPath, "/") . "/". ltrim($endpoint, "/");
         $buildEndpoint = ltrim($endpoint, "/");
         if (!empty($params)) {
             $query =  http_build_query($params);
@@ -116,6 +115,7 @@ abstract class Client
             $this->initClient();
         }
 
+        $endpoint = ltrim(rtrim($this->apiPath, '/'), '/')  . '/' . $endpoint;
         if (!is_array($options)) {
             $options = [];
         }
